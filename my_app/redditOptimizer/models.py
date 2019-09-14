@@ -8,3 +8,15 @@ class InputBox(models.Model):
     def __str__(self):
         """A string representation of the model."""
         return self.title
+
+class OutputBox(models.Model):
+    subreddit1 = models.CharField(max_length=100)
+    subreddit2 = models.CharField(max_length=100)
+    subreddit3 = models.CharField(max_length=100)
+    subreddit4 = models.CharField(max_length=100)
+    subreddit5 = models.CharField(max_length=100)
+
+
+    def __str__(self):
+        """A string representation of the model."""
+        return self.title
