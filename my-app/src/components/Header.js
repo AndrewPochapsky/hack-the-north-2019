@@ -3,7 +3,7 @@ import React from 'react';
 function Header() {
     return (
         <header style={headerStyle}>
-            <h1>Reddit Optimizer</h1>
+            <h1 class="animated bounceInDown">Reddit Optimizer</h1>
         </header>
 
     )
@@ -14,7 +14,8 @@ const headerStyle = {
     paddingBottom: '0.5vw',
     textAlign: 'center',
     fontFamily: 'Quicksand',
-    backgroundColor: '#d6d6f5',
+    backgroundColor: 'black',
+    color:'white',
     fontSize: '30px'
 }
 export default Header;

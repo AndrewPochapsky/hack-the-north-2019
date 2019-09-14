@@ -16,6 +16,7 @@ const desStyle = {
     textAlign: 'center',
     fontFamily: 'Quicksand',
     fontSize: '25px',
-    backgroundColor: '#d6d6f5'
+    backgroundColor: 'black',
+    color: 'white',
 }
 export default Description;
