@@ -46,9 +46,9 @@ class ListField(models.TextField):
         return self.get_prep_value(value)
 
 class InputBox(models.Model):
-    return_number = models.PositiveSmallIntegerField('Return Number')
+    return_number = models.PositiveSmallIntegerField()
     title = models.CharField(max_length=255)
-    body = models.TextField(blank=True)
+    body = models.TextField(blank=False)
 
     def __str__(self):
         return self.title
