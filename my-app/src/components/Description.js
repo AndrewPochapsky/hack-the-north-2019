@@ -11,7 +11,8 @@ function Description() {
 }
 
 const desStyle = {
-    padding:'0.5vw 4vw',
+    padding: '0.5vw 4vw',
+    paddingBottom: '5vw',
     textAlign: 'center',
     fontFamily: 'Quicksand',
     fontSize: '25px',
