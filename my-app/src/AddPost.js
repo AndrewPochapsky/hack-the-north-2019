@@ -1,54 +1,34 @@
 import React, { Component } from 'react'
-import axios from 'axios';
 
 export class AddPost extends Component {
-    state = {
-        title: '',
-        description: ''
+    constructor(props) {
+        super(props);
     }
-
-    onSubmit = (e) => {
-        e.preventDefault();     //prevent it from submitting to default thing
-        //ADD CODE THAT STORES THIS SOMEWHERE
-        this.setState({ title: '', description: '' });
-        const title = e.target.elements.title.value;
-        const description = e.target.elements.description.value;
-        console.log(title, description);
-        axios.post('http://localhost:8000/api/createInput/', {
-            title: title,
-            description: description
-        });
-
-        this.props.isSubmit.setState( this.props.isSubmit = true );
-        // .then(res => console.log(res))
-        // .catch(err => console.err(error));
-    }
-
 
     onChange = (e) => this.setState({ [e.target.name]: e.target.value });
 
     render() {
         return (
-            <form onSubmit={this.onSubmit} style={formSty}>
+            <form onSubmit={this.props.handleSubmit} style={formSty}>
                 <label style={labelSty}>
-                Title:
+                Title
                 <input
                         type="text"
                         name="title"
                         style={textSty}
                         placeholder="Title of your post ..."
-                        value={this.state.title}
+                        value={this.props.title}
                         onChange={this.onChange}
                     />
                 </label>
                 <label style={labelSty}>
-                    Body:
+                    Body
                 <input
                         type="text"
                         name="description"
                         style={textSty}
                         placeholder="Insert your post content here ..."
-                        value={this.state.description}
+                        value={this.props.description}
                         onChange={this.onChange}
                     />
                     </label>
@@ -68,7 +48,8 @@ const formSty = {
     backgroundColor: 'black',
     color: 'white',
     paddingLeft: '20vw',
-    paddingRight: '20vw'
+    paddingRight: '20vw',
+    paddingBottom: '20vw'
 }
 
 const labelSty = {
@@ -81,17 +62,18 @@ const textSty = {
     width: '100%',
     padding: '4vw',
    // borderRadius: '10%',
-    marginBottom: '5vw',
+    marginBottom: '4vw',
     backgroundColor: '#d9d9d9'
 }
 
 const buttonSty = {
     backgroundColor: '#595959',
-    padding: '2vw 2vw',
+    width: '150px',
+    padding: '15px 0px',
     borderRadius: '30%',
     color: 'white',
-    fontSize:'25px',
-    //float: 'right'
+    fontSize:'22px',
+    float: 'right'
 }
 
 export default AddPost
