@@ -18,6 +18,8 @@ export class AddPost extends Component {
             title: title,
             description: description
         });
+
+        this.props.isSubmit.setState( this.props.isSubmit = true );
         // .then(res => console.log(res))
         // .catch(err => console.err(error));
     }

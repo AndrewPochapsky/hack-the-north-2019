@@ -13,7 +13,7 @@ class App extends Component {
             <div className="App">
                 <Header/>
                 <Description />
-                <AddPost />
+                <AddPost isSubmit={this.state.isSubmit}/>
             </div>
         );
     }
