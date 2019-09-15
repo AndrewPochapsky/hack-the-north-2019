@@ -4,6 +4,8 @@ from rest_framework import generics
 from .models import InputBox, OutputBox
 from .serializers import InputSerializer, OutputSerializer
 
+from rest_framework import viewsets
+
 #Create your views here.
 class ListInput(generics.ListAPIView):
     queryset = InputBox.objects.all()

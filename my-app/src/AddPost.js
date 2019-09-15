@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import axios from 'axios';
 
 export class AddPost extends Component {
     state = {
@@ -10,7 +11,17 @@ export class AddPost extends Component {
         e.preventDefault();     //prevent it from submitting to default thing
         //ADD CODE THAT STORES THIS SOMEWHERE
         this.setState({ title: '', description: '' });
+        const title = e.target.elements.title.value;
+        const description = e.target.elements.description.value;
+        console.log(title, description);
+        axios.post('http://localhost:8000/api/createInput/', {
+            title: title,
+            description: description
+        });
+        // .then(res => console.log(res))
+        // .catch(err => console.err(error));
     }
+
 
     onChange = (e) => this.setState({ [e.target.name]: e.target.value });
 
@@ -19,7 +30,7 @@ export class AddPost extends Component {
             <form onSubmit={this.onSubmit} style={formSty}>
                 <label style={labelSty}>
                 Title:
-                <input 
+                <input
                         type="text"
                         name="title"
                         style={textSty}
@@ -27,7 +38,7 @@ export class AddPost extends Component {
                         value={this.state.title}
                         onChange={this.onChange}
                     />
-                </label>   
+                </label>
                 <label style={labelSty}>
                     Body:
                 <input
@@ -44,6 +55,7 @@ export class AddPost extends Component {
                     value="submit"
                     style={buttonSty}
                     className="btn"
+                    htmltype="submit"
                 />
             </form>
         )
