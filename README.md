@@ -1,1 +1,3 @@
-# hack-the-north-2019
+# Hack the North 2019
+<b> Project name: Reddit Optimizer </b>
+
