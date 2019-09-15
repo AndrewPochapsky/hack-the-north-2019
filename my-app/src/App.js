@@ -7,7 +7,7 @@ import AddPost from './AddPost';
 class App extends Component {
 
     state = {
-        isSubmit: true,
+        isSubmit: false,
             subreddits: [
                 {
                     id: 1,

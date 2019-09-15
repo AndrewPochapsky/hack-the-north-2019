@@ -50,6 +50,8 @@ export class AddPost extends Component {
     }
 }
 
+
+
 const formSty = {
     backgroundColor: 'black',
     color: 'white',
@@ -65,9 +67,10 @@ const labelSty = {
 }
 
 const textSty = {
-    width: '100%',
+    width: '75%',
     padding: '4vw',
-   // borderRadius: '10%',
+    fontFamily: 'Quicksand',
+    fontSize: '25px',
     marginBottom: '4vw',
     backgroundColor: '#d9d9d9'
 }

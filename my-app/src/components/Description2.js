@@ -3,7 +3,7 @@ import React from 'react';
 function Description() {
     return (
         <header style={desStyle}>
-            <p>Here's the after screen</p>
+            <p>We predit that these are the top 5 subreddits that will get you the most karma.</p>
         </header>
 
     )
@@ -11,7 +11,7 @@ function Description() {
 
 const desStyle = {
     padding: '0.5vw 4vw',
-    paddingBottom: '5vw',
+    paddingBottom: '3vw',
     textAlign: 'center',
     fontFamily: 'Quicksand',
     fontSize: '25px',
