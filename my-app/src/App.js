@@ -64,6 +64,14 @@ class App extends Component {
         // .catch(err => console.err(error));
     }
 
+    fetchOutput = () => {
+        axios.get('http://localhost:8000/api/viewOutput/').then(res => {
+            this.setState({
+                subreddits: res.data
+            });
+        });
+    }
+
 
     render() {
         console.log("this.state.isSubmit", this.state.isSubmit);
@@ -76,6 +84,7 @@ class App extends Component {
                 </div>
             );
         } else {
+            this.fetchOutput();
             return (
                 <div className="App">
                     <Header />
