@@ -20,8 +20,10 @@ from torch.nn.utils.rnn import pack_padded_sequence, pad_packed_sequence
 import os.path
 
 import importlib
-predict = importlib.import_module('predict')
-pre_process = importlib.import_module('pre_process')
+# predict = importlib.import_module('predict')
+# pre_process = importlib.import_module('pre_process')
+from . import predict
+from . import pre_process
 
 def get_subreddits(title, body):
     input_tensor = pre_process.prepare_input(title, body)
@@ -54,5 +56,3 @@ def get_reverse_cat_encoder(category_encoder):
     for cat in category_encoder:
         res[category_encoder[cat]] = cat
     return res
-
-

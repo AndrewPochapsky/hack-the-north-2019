@@ -47,7 +47,7 @@ class App extends Component {
 
     handleSubmit(e) {
 
-        "setting is submit to true";
+        //"setting is submit to true";
         e.preventDefault();
         this.setState({isSubmit:true});
 
@@ -58,21 +58,28 @@ class App extends Component {
             title: title,
             description: description
         });
+        axios.get('http://localhost:8000/api/viewOutput/').then(res => {
+            this.setState({
+                subreddits: res.data
+            });
+        }, (error) => {
+  console.log(error);});
 
         //this.setState({this.props.isSubmit:true});
         // .then(res => console.log(res))
         // .catch(err => console.err(error));
     }
 
-    fetchOutput = () => {
-        axios.get('http://localhost:8000/api/viewOutput/').then(res => {
-            this.setState({
-                subreddits: res.data
-            });
-        });
-    }
+  //   fetchOutput = () => {
+  //       axios.get('http://localhost:8000/api/viewOutput/').then(res => {
+  //           this.setState({
+  //               subreddits: res.data
+  //           });
+  //       }, (error) => {
+  // console.log(error);});
+  //   }
 
-    
+
 
 
     render() {
@@ -86,7 +93,8 @@ class App extends Component {
                 </div>
             );
         } else {
-            this.fetchOutput();
+
+            //this.fetchOutput();
             return (
                 <div className="App">
                     <Header />

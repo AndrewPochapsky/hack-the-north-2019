@@ -7,8 +7,8 @@ from torch.nn.utils.rnn import pack_padded_sequence, pad_packed_sequence
 import pickle
 import importlib
 import os.path
-awd_lstm = importlib.import_module('awd_lstm')
-
+# awd_lstm = importlib.import_module('awd_lstm')
+from . import awd_lstm
 
 
 class Pooling(nn.Module):
