@@ -30,3 +30,8 @@ class ListCreateOutput(generics.CreateAPIView):
 class ListDeleteOutput(generics.DestroyAPIView):
     queryset = OutputBox.objects.all()
     serializer_class = OutputSerializer
+
+def formSubmission():
+    #delete entries from OutputBox
+    OutputBox.objects.all().delete()
+    #generate the outputBox

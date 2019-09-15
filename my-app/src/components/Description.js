@@ -3,8 +3,7 @@ import React from 'react';
 function Description() {
     return (
         <header style={desStyle}>
-            <p>Here's a brief discription of what our shit does.
-                Please use it fiodsjfisjdifjajdsfsdf ahahasdfkl. thx</p>
+            <p>Copy and Paste your reddit post into the text box. We will tell you the top 5 subreddits that will give your post the most traction.</p>
         </header>
 
     )
